@@ -9,6 +9,20 @@ route.post("/",async(req,res)=>{
         const db=connection.db(dbName)
         const collection=db.collection("userEmbedded");
         const isCreated=await collection.insertOne(dataToSave)
+        // Embedded Data
+        // {
+        //     "name":"aditya thakur",
+        //     "contact":{
+        //         "email":"aditya@gmail.com",
+        //         "mobile":"1325718582"
+        //     },
+        //     "address":{
+        //         "city":"pune",
+        //         "state":"Maharashtra",
+        //         "pincode":414001
+        //     }
+        
+        // }
        if(!isCreated)
        return res.status(400).send("something went wrong!");
        return res.status(200).send("Data created!");

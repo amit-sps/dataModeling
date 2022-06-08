@@ -16,6 +16,29 @@ route.post("/", async (req, res) => {
     const addressToSave = { userId: theUser.insertedId, city, state, pincode };
     const theContact = await contactCollection.insertOne(contactToSave);
     const theAddress = await addressCollection.insertOne(addressToSave);
+ 
+    //     "contact":
+    //     "address":
+    
+    // }
+    // User :- {
+    //    "name":"aditya thakur"
+    //   }
+
+    // Contact:-{
+    //         "userId":ObjectId(".........")
+    //         "email":"aditya@gmail.com",
+    //         "mobile":"1325718582"
+    //          }
+
+    // address:-{
+        //      "userId":ObjectId(".........")
+    //         "city":"pune",
+    //         "state":"Maharashtra",
+    //         "pincode":414001
+    //     }
+
+
     return res
       .status(200)
       .json({
